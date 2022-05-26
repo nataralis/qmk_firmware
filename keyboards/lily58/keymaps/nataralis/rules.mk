@@ -11,11 +11,14 @@ SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 OLED_ENABLE= yes     # OLED display
 
 SPLIT_KEYBOARD = yes
+WPM_ENABLE = yes
+UNICODEMAP_ENABLE = yes
 
 # If you want to change the display of OLED, you need to change here
 SRC +=  layer_state_reader_custom.c \
-        ./lib/logo_reader.c \
-        ./lib/host_led_state_reader.c \
+        host_led_state_reader_custom.c \
+        # ./lib/logo_reader.c \
+        # bongocat_oled.c \
         # ./lib/keylogger.c \
         # ./lib/rgb_state_reader.c \
         # ./lib/mode_icon_reader.c \
