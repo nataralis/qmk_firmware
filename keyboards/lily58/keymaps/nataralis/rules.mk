@@ -13,6 +13,7 @@ OLED_ENABLE= yes     # OLED display
 SPLIT_KEYBOARD = yes
 WPM_ENABLE = yes
 UNICODEMAP_ENABLE = yes
+LTO_ENABLE = yes
 
 # If you want to change the display of OLED, you need to change here
 SRC +=  layer_state_reader_custom.c \

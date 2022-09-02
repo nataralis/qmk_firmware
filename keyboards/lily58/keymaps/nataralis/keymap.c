@@ -129,9 +129,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * ,-----------------------------------------.                    ,-----------------------------------------.
   * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |   ß  |
   * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-  * | Tab  |   Ä  |   ,  |   .  |   P  |   Y  |                    |   F  |   G  |   C  |   R  |   L  |   Ü  |
+  * | Tab  |   Ö  |   ,  |   .  |   P  |   Y  |                    |   F  |   G  |   C  |   R  |   L  |   Ü  |
   * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-  * |LCTRL |   A  |   O  |   E  |   U  |   I  |-------.    ,-------|   D  |   H  |   T  |   N  |   S  |   Ö  |
+  * |LCTRL |   A  |   O  |   E  |   U  |   I  |-------.    ,-------|   D  |   H  |   T  |   N  |   S  |   Ä  |
   * |------+------+------+------+------+------|   +   |    |   #   |------+------+------+------+------+------|
   * |LShift|   -  |   Q  |   J  |   K  |   X  |-------|    |-------|   B  |   M  |   W  |   V  |   Z  |RShift|
   * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -141,8 +141,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   */
   [_DVORAK_DE] = LAYOUT(
     KC_ESC,  DE_1,    DE_2,    DE_3,    DE_4,    DE_5,                      DE_6,    DE_7,    DE_8,    DE_9,    DE_0,    DE_SS,
-    KC_TAB,  DE_ADIA, DE_COMM, DE_DOT,  DE_P,    DE_Y,                      DE_F,    DE_G,    DE_C,    DE_R,    DE_L,    DE_UDIA,
-    KC_LCTL, DE_A,    DE_O,    DE_E,    DE_U,    DE_I,                      DE_D,    DE_H,    DE_T,    DE_N,    DE_S,    DE_ODIA,
+    KC_TAB,  DE_ODIA, DE_COMM, DE_DOT,  DE_P,    DE_Y,                      DE_F,    DE_G,    DE_C,    DE_R,    DE_L,    DE_UDIA,
+    KC_LCTL, DE_A,    DE_O,    DE_E,    DE_U,    DE_I,                      DE_D,    DE_H,    DE_T,    DE_N,    DE_S,    DE_ADIA,
     KC_LSFT, DE_MINS, DE_Q,    DE_J,    DE_K,    DE_X,    DE_PLUS, DE_HASH, DE_B,    DE_M,    DE_W,    DE_V,    DE_Z,    KC_RSFT,
                                KC_LGUI, KC_LALT, LOW_DE,  KC_SPC,  KC_ENT,  RAISE,   KC_BSPC, KC_RALT
   ),
@@ -449,24 +449,24 @@ bool oled_task_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
-    case QWERTY:
+    case QWERTY: // Switch the default layer to _QWERTY
       if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY); // Switch the default layer to QWERTY
+        set_single_persistent_default_layer(_QWERTY);
       }
       return false;
-    case QWER_DE:
+    case QWER_DE: // Switch the default layer to _QWERTZ_DE
       if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTZ_DE); // Switch the default layer to QWERTZ DE
+        set_single_persistent_default_layer(_QWERTZ_DE);
       }
       return false;
-    case DVORAK:
+    case DVORAK: // Switch the default layer to _DVORAK
       if (record->event.pressed) {
-        set_single_persistent_default_layer(_DVORAK); // Switch the default layer to Dvorak
+        set_single_persistent_default_layer(_DVORAK);
       }
       return false;
-    case DVOR_DE:
+    case DVOR_DE: // Switch the default layer to _DVORAK_DE
       if (record->event.pressed) {
-        set_single_persistent_default_layer(_DVORAK_DE); // Switch the default layer to Dvorak DE
+        set_single_persistent_default_layer(_DVORAK_DE);
       }
       return false;
     case LOWER: // Switch layer to _LOWER while key is pressed
