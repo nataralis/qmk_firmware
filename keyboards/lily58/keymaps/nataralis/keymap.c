@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|   +   |    |   #   |------+------+------+------+------+------|
   * |LShift|   Y  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   -  |RShift|
   * `-----------------------------------------/       /     \      \-----------------------------------------'
-  *                   | LGUI | LAlt |LOWER | /Space  /       \Enter \  |RAISE |BackSP|RCTRL |
+  *                   | LGUI | LAlt |LOWER | /Space  /       \Enter \  |RAISE |BackSP| RALT |
   *                   |      |      |      |/       /         \      \ |      |      |      |
   *                   `----------------------------'           '------''--------------------'
   */
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                      DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    DE_UDIA,
     KC_LCTL, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                      DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
     KC_LSFT, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,    DE_PLUS, DE_HASH, DE_N,    DE_M,    DE_COMM, DE_DOT,  DE_MINS, KC_RSFT,
-                               KC_LGUI, KC_LALT, LOW_DE,  KC_SPC,  KC_ENT,  RAISE,   KC_BSPC, KC_RCTL
+                               KC_LGUI, KC_LALT, LOW_DE,  KC_SPC,  KC_ENT,  RAISE,   KC_BSPC, KC_RALT
   ),
   /* DVORAK
   * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -232,7 +232,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
   if (((state & ADJUST_US) == ADJUST_US) || ((state & ADJUST_DE) == ADJUST_DE)) {
     state = state | (1UL << _ADJUST);
   } else {

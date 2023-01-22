@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define UNICODE_SELECTED_MODES UC_MAC, UC_WINC
+#define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE
 
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 100
