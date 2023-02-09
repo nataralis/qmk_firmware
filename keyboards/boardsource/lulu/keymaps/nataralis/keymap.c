@@ -214,9 +214,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   /* ADJUST
   * ,-----------------------------------------.                    ,-----------------------------------------.
-  * |UCMode|      |      |      |      |      |                    |      |      |      |      |      |RGB IO|
+  * |UCMode|      |      |      |      |      |                    |RGBTOG|RGBHUI|RGBSAI|RGBVAI|RGBSPI|      |
   * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-  * |      |      |      |      |      |      |                    |      |      |      |      |      |RGBMOD|
+  * |      |      |      |      |      |      |                    |RGBMOD|RGBHUD|RGBSAD|RGBVAD|RGBSPD|      |
   * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
   * |      |      |      |QWERTZ|QWERTY|      |-------.    ,-------|      |Dvorak|DvorDE|      |      |      |
   * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
@@ -227,8 +227,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   *                   `----------------------------'           '------''--------------------'
   */
   [_ADJUST] = LAYOUT(
-    UC_MOD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_TOG,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_MOD,
+    UC_MOD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, QWER_DE, QWERTY,  XXXXXXX,                   XXXXXXX, DVORAK,  DVOR_DE, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                _______, _______, _______, _______, _______, _______, _______, _______
